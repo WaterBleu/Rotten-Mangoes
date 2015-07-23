@@ -29,13 +29,12 @@
 }
 
 - (void) getPosterImg:(void (^)(UIImage *img, NSError *error))completionBlock{
-//    if(!self.posterImg){
         NSURLSession *session = [NSURLSession sharedSession];
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:self.posterURL];
         NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             if (!error){
-//                self.posterImg = ;
-                completionBlock([UIImage imageWithData:data], error);
+                self.posterImg = [UIImage imageWithData:data];
+                completionBlock(self.posterImg, error);
             }
             else
                 NSLog(@"Image not retrieved properly :(, with error %@", error.description);
