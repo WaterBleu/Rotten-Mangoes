@@ -7,8 +7,14 @@
 //
 
 #import "DetailViewController.h"
+#import "Movie.h"
 
 @interface DetailViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labelRuntime;
+@property (weak, nonatomic) IBOutlet UILabel *labelRated;
+@property (weak, nonatomic) IBOutlet UIImageView *imagePoster;
 
 @end
 
@@ -28,7 +34,11 @@
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        Movie *currentMovie = self.detailItem;
+        self.labelTitle.text = currentMovie.title;
+        self.labelRuntime.text = [NSString stringWithFormat:@"%@ Minutes",currentMovie.runtime];
+        self.labelRated.text = currentMovie.mpaa_rating;
+        self.imagePoster.image = currentMovie.posterImg;
     }
 }
 

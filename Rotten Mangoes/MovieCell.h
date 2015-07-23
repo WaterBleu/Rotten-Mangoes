@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  MovieCell.h
 //  Rotten Mangoes
 //
 //  Created by Jeff Huang on 2015-07-22.
@@ -7,13 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Movie.h"
 
-@class Movie;
-@interface DetailViewController : UIViewController
+@interface MovieCell : UICollectionViewCell
 
-@property (strong, nonatomic) Movie* detailItem;
-
-
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
-

@@ -15,6 +15,8 @@
 		BD69B7311B600944006378C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD69B7301B600944006378C9 /* Images.xcassets */; };
 		BD69B7341B600944006378C9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD69B7321B600944006378C9 /* LaunchScreen.xib */; };
 		BD69B7401B600944006378C9 /* Rotten_MangoesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD69B73F1B600944006378C9 /* Rotten_MangoesTests.m */; };
+		BD69B74E1B6014E8006378C9 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = BD69B74D1B6014E8006378C9 /* Movie.m */; };
+		BD69B7511B603C3B006378C9 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD69B7501B603C3B006378C9 /* MovieCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,10 @@
 		BD69B7391B600944006378C9 /* Rotten MangoesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rotten MangoesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD69B73E1B600944006378C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD69B73F1B600944006378C9 /* Rotten_MangoesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rotten_MangoesTests.m; sourceTree = "<group>"; };
+		BD69B74C1B6014E8006378C9 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		BD69B74D1B6014E8006378C9 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		BD69B74F1B603C3B006378C9 /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
+		BD69B7501B603C3B006378C9 /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +92,14 @@
 			children = (
 				BD69B7241B600944006378C9 /* AppDelegate.h */,
 				BD69B7251B600944006378C9 /* AppDelegate.m */,
+				BD69B74C1B6014E8006378C9 /* Movie.h */,
+				BD69B74D1B6014E8006378C9 /* Movie.m */,
 				BD69B7271B600944006378C9 /* MasterViewController.h */,
 				BD69B7281B600944006378C9 /* MasterViewController.m */,
 				BD69B72A1B600944006378C9 /* DetailViewController.h */,
 				BD69B72B1B600944006378C9 /* DetailViewController.m */,
+				BD69B74F1B603C3B006378C9 /* MovieCell.h */,
+				BD69B7501B603C3B006378C9 /* MovieCell.m */,
 				BD69B72D1B600944006378C9 /* Main.storyboard */,
 				BD69B7301B600944006378C9 /* Images.xcassets */,
 				BD69B7321B600944006378C9 /* LaunchScreen.xib */,
@@ -226,6 +236,8 @@
 			files = (
 				BD69B7261B600944006378C9 /* AppDelegate.m in Sources */,
 				BD69B7291B600944006378C9 /* MasterViewController.m in Sources */,
+				BD69B7511B603C3B006378C9 /* MovieCell.m in Sources */,
+				BD69B74E1B6014E8006378C9 /* Movie.m in Sources */,
 				BD69B7231B600944006378C9 /* main.m in Sources */,
 				BD69B72C1B600944006378C9 /* DetailViewController.m in Sources */,
 			);
