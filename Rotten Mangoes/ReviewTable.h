@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReviewTable : UITableView <UITableViewDataSource, UITableViewDelegate>
+@interface ReviewTable : UITableView
 
 @end

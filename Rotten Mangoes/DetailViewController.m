@@ -22,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet ReviewCell *reviewCell;
 
 
-@property (nonatomic) NSMutableArray* object;
+@property (nonatomic) NSMutableArray* objects;
 
 @end
 
@@ -47,7 +47,6 @@
         self.labelRuntime.text = [NSString stringWithFormat:@"%@ Minutes",currentMovie.runtime];
         self.labelRated.text = currentMovie.mpaa_rating;
         self.imagePoster.image = currentMovie.posterImg;
-        [self setReview];
     }
 }
 
@@ -79,7 +78,8 @@
                     Review *r = [[Review alloc] initWithCritic:critic andDate:date andFreshness:freshness andPublication:publication andQuote:quote];
                     [reviewArray addObject:r];
                 }
-                self.object = reviewArray;
+                self.objects = reviewArray;
+              //  [self.reviewTable reloadData];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.reviewTable reloadData];
                 });
@@ -94,6 +94,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    [self setReview];
+
 }
 
 - (void)didReceiveMemoryWarning {

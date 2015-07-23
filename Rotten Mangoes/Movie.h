@@ -19,6 +19,6 @@
 @property (nonatomic) NSURL* posterURL;
 @property (nonatomic) UIImage* posterImg;
 
-- (UIImage*) getPosterImg;
+- (void) getPosterImg:(void (^)(UIImage *img, NSError *error))completionBlock;
 
 @end

@@ -95,12 +95,16 @@ static NSString * const imgIdentifier = @"dkpu1ddg7pbsk.cloudfront.net";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MovieCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    Movie *currentMovie = self.object[indexPath.row];
+    Movie *currentMovie = self.object[indexPath.item];
     // Configure the cell
-    cell.imageView.image = [currentMovie getPosterImg];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.collectionView reloadData];
-    });
+    [currentMovie getPosterImg:^(UIImage *img, NSError *error) {
+        if(!error)
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.imageView.image = img;
+            });
+        else
+            NSLog(@"Image not retrieved properly :(, with error %@", error.description);
+    }];
     return cell;
 }
 

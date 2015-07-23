@@ -10,7 +10,7 @@
 #import "ReviewCell.h"
 #import "Review.h"
 
-@interface ReviewTable ()
+@interface ReviewTable () 
 
 @property (nonatomic) NSMutableArray* objects;
 
@@ -37,6 +37,5 @@
     cell.labelQuote.text = currentReview.quote;
     return cell;
 }
-
 
 @end
