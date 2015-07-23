@@ -10,8 +10,9 @@
 
 @interface Movie : NSObject
 
-- (instancetype)initWithPoster:(NSURL*)posterURL andTitle:(NSString*)title andRunTime:(NSNumber*)runtime andmpaaRating:(NSString*)mpaa_rating;
+- (instancetype)initWithID:(NSString*)movieID Poster:(NSURL*)posterURL andTitle:(NSString*)title andRunTime:(NSNumber*)runtime andmpaaRating:(NSString*)mpaa_rating;
 
+@property (nonatomic) NSString* movieID;
 @property (nonatomic) NSString* title;
 @property (nonatomic) NSNumber* runtime;
 @property (nonatomic) NSString* mpaa_rating;

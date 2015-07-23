@@ -15,10 +15,11 @@
 
 @implementation Movie
 
-- (instancetype)initWithPoster:(NSURL*)posterURL andTitle:(NSString*)title andRunTime:(NSNumber*)runtime andmpaaRating:(NSString*)mpaa_rating
+- (instancetype)initWithID:(NSString*)movieID Poster:(NSURL*)posterURL andTitle:(NSString*)title andRunTime:(NSNumber*)runtime andmpaaRating:(NSString*)mpaa_rating
 {
     self = [super init];
     if (self) {
+        self.movieID = movieID;
         self.posterURL = posterURL;
         self.title = title;
         self.runtime = runtime;

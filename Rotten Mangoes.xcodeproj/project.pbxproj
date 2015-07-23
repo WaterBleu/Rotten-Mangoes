@@ -17,6 +17,9 @@
 		BD69B7401B600944006378C9 /* Rotten_MangoesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD69B73F1B600944006378C9 /* Rotten_MangoesTests.m */; };
 		BD69B74E1B6014E8006378C9 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = BD69B74D1B6014E8006378C9 /* Movie.m */; };
 		BD69B7511B603C3B006378C9 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD69B7501B603C3B006378C9 /* MovieCell.m */; };
+		BD69B7861B608388006378C9 /* ReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD69B7851B608388006378C9 /* ReviewCell.m */; };
+		BD69B7891B6089DC006378C9 /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = BD69B7881B6089DC006378C9 /* Review.m */; };
+		BD69B78C1B608E25006378C9 /* ReviewTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BD69B78B1B608E25006378C9 /* ReviewTable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,12 @@
 		BD69B74D1B6014E8006378C9 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		BD69B74F1B603C3B006378C9 /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 		BD69B7501B603C3B006378C9 /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		BD69B7841B608388006378C9 /* ReviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewCell.h; sourceTree = "<group>"; };
+		BD69B7851B608388006378C9 /* ReviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewCell.m; sourceTree = "<group>"; };
+		BD69B7871B6089DC006378C9 /* Review.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Review.h; sourceTree = "<group>"; };
+		BD69B7881B6089DC006378C9 /* Review.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Review.m; sourceTree = "<group>"; };
+		BD69B78A1B608E25006378C9 /* ReviewTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewTable.h; sourceTree = "<group>"; };
+		BD69B78B1B608E25006378C9 /* ReviewTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewTable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +107,13 @@
 				BD69B7281B600944006378C9 /* MasterViewController.m */,
 				BD69B72A1B600944006378C9 /* DetailViewController.h */,
 				BD69B72B1B600944006378C9 /* DetailViewController.m */,
+				BD69B7871B6089DC006378C9 /* Review.h */,
+				BD69B7881B6089DC006378C9 /* Review.m */,
+				BD69B7841B608388006378C9 /* ReviewCell.h */,
+				BD69B7851B608388006378C9 /* ReviewCell.m */,
 				BD69B74F1B603C3B006378C9 /* MovieCell.h */,
+				BD69B78A1B608E25006378C9 /* ReviewTable.h */,
+				BD69B78B1B608E25006378C9 /* ReviewTable.m */,
 				BD69B7501B603C3B006378C9 /* MovieCell.m */,
 				BD69B72D1B600944006378C9 /* Main.storyboard */,
 				BD69B7301B600944006378C9 /* Images.xcassets */,
@@ -238,8 +253,11 @@
 				BD69B7291B600944006378C9 /* MasterViewController.m in Sources */,
 				BD69B7511B603C3B006378C9 /* MovieCell.m in Sources */,
 				BD69B74E1B6014E8006378C9 /* Movie.m in Sources */,
+				BD69B78C1B608E25006378C9 /* ReviewTable.m in Sources */,
 				BD69B7231B600944006378C9 /* main.m in Sources */,
+				BD69B7891B6089DC006378C9 /* Review.m in Sources */,
 				BD69B72C1B600944006378C9 /* DetailViewController.m in Sources */,
+				BD69B7861B608388006378C9 /* ReviewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

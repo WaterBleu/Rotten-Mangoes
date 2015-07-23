@@ -47,6 +47,7 @@ static NSString * const imgIdentifier = @"dkpu1ddg7pbsk.cloudfront.net";
             NSMutableArray *movieArray = [[NSMutableArray alloc] init];
             
             for (NSDictionary *movie in retrievedMovieList){
+                NSString *movieID = [NSString stringWithFormat:@"%@", movie[@"id"]];
                 NSString *title = movie[@"title"];
                 NSNumber *runtime = movie[@"runtime"];
                 NSString *mpaa_rating = movie[@"mpaa_rating"];
@@ -54,7 +55,7 @@ static NSString * const imgIdentifier = @"dkpu1ddg7pbsk.cloudfront.net";
                 NSRange range = NSMakeRange([fullURL rangeOfString:imgIdentifier].location, fullURL.length-1);
                 NSString *suffixURL = [fullURL substringFromIndex:range.location];
                 NSURL *posterURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@", suffixURL]];
-                Movie *m = [[Movie alloc] initWithPoster:posterURL andTitle:title andRunTime:runtime andmpaaRating:mpaa_rating];
+                Movie *m = [[Movie alloc] initWithID:movieID Poster:posterURL andTitle:title andRunTime:runtime andmpaaRating:mpaa_rating];
                 [movieArray addObject:m];
             }
             self.object = movieArray;

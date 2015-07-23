@@ -8,6 +8,9 @@
 
 #import "DetailViewController.h"
 #import "Movie.h"
+#import "Review.h"
+#import "ReviewCell.h"
+#import "ReviewTable.h"
 
 @interface DetailViewController ()
 
@@ -15,6 +18,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelRuntime;
 @property (weak, nonatomic) IBOutlet UILabel *labelRated;
 @property (weak, nonatomic) IBOutlet UIImageView *imagePoster;
+@property (weak, nonatomic) IBOutlet ReviewTable *reviewTable;
+@property (weak, nonatomic) IBOutlet ReviewCell *reviewCell;
+
+
+@property (nonatomic) NSMutableArray* object;
 
 @end
 
@@ -39,6 +47,46 @@
         self.labelRuntime.text = [NSString stringWithFormat:@"%@ Minutes",currentMovie.runtime];
         self.labelRated.text = currentMovie.mpaa_rating;
         self.imagePoster.image = currentMovie.posterImg;
+        [self setReview];
+    }
+}
+
+- (void)setReview{
+    if (self.detailItem){
+        Movie *currentMovie = self.detailItem;
+        NSString *movieID = currentMovie.movieID;
+        
+        NSString *apiKey = @"55gey28y6ygcr8fjy4ty87ek";
+        NSURL *targetURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.rottentomatoes.com/api/public/v1.0/movies/%@/reviews.json?apikey=%@&page_limit=3", movieID, apiKey]];
+        
+        NSURLSession *session = [NSURLSession sharedSession];
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:targetURL];
+        NSURLSessionTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            if (!error){
+                NSError *jsonError = nil;
+                
+                NSDictionary *retrievedReviewDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+                NSArray *retrievedReviewList = retrievedReviewDict[@"reviews"];
+                NSMutableArray *reviewArray = [[NSMutableArray alloc] init];
+                
+                for (NSDictionary *review in retrievedReviewList){
+                    NSString *critic = review[@"critic"];
+                    NSString *date = review[@"date"];
+                    NSString *freshness = review[@"freshness"];
+                    NSString *publication = review[@"publication"];
+                    NSString *quote = review[@"quote"];
+                    
+                    Review *r = [[Review alloc] initWithCritic:critic andDate:date andFreshness:freshness andPublication:publication andQuote:quote];
+                    [reviewArray addObject:r];
+                }
+                self.object = reviewArray;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.reviewTable reloadData];
+                });
+            }
+        }];
+        [dataTask resume];
+
     }
 }
 
